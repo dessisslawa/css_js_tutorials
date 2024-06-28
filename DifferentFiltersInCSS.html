@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Animations with JavaScript</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:840px;
+            height: 450px;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            transition: all 0.3s ease;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="button-container">
+		<button onclick="filterImage('none')">Original</button>
+        <button onclick="filterImage('blur')">Blur</button>
+        <button onclick="filterImage('contrast(200%)')">Contrast</button>
+        <button onclick="filterImage('grayscale(100%)')">Grayscale</button>
+		<button onclick="filterImage('sepia(80%)')">Sepia</button>
+		<button onclick="filterImage('invert(100%)')">Invert</button>
+        <button onclick="filterImage('hue-rotate(90deg)')">HueRotate</button>
+        <button onclick="filterImage('drop-shadow(16px 16px 20px lightgrey)')">Drop Shadow</button>
+    </div>
+
+    <div class="image-container">
+        <img id="image" src="images/sun.jpg" alt="filters">
+    </div>
+
+    <script>
+      function filterImage(filter) {
+    const image = document.getElementById('image');
+    image.style.filter = filter;
+}
+
+    </script>
+</body>
+</html>
